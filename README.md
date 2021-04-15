@@ -1,6 +1,19 @@
-# Cloud Run as a VPC Proxy
+# Cloud Run VPC Proxy
 
-No more creating a VM and futzing around with SSH to get a client :)
+Cloud Run as a VPC Proxy is a project to make GCP demos that require connecting to private IPs slightly easier. 
+
+*Don't use for any other purpose other than demos.*
+
+Cloud Run VPC Proxy will use Serverless VPC Access to ensure that a Cloud Run instance running a Flask app can access private endpoints in your Google VPC.
+
+Cloud Run VPC Proxy works by issuing a request with the Private IP baked into a subpath at `http://$CLOUD_RUN_ENDPOINT/ip_addr/$PRIVATE_IP`. This will issue a request from the Flask app to that private IP and return the response provided from your private app. 
+
+It also by default requires authenticated users, so you will need to pass in a token from an authenticated and authorized IAM user in your GCP project when generating your request.
+
+
+No more creating a VM and futzing around with SSH to get a client in your VPC network. :)
+
+
 
 ## Create a subnet for VPC Serverless Access
 
