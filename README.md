@@ -5,5 +5,12 @@ No more creating a VM and futzing around with SSH to get a client :)
 ## Build with Buildpacks and Cloud build
 
 ```
- gcloud alpha builds submit --pack image=gcr.io/agmsb-k8s/cloudrun
--vpc-proxy```
+gcloud alpha builds submit --pack image=gcr.io/agmsb-k8s/cloudrun
+-vpc-proxy
+```
+
+## TODO
+
+- Gcloud commands for subnet creation & enabling VPC Serverless Access
+- Handle more complex paths
+- Pretty print response
