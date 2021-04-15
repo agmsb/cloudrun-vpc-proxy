@@ -5,7 +5,7 @@ No more creating a VM and futzing around with SSH to get a client :)
 ## Build with Buildpacks and Cloud build
 
 ```
-gcloud alpha builds submit --pack image=gcr.io/agmsb-k8s/cloudrun
+gcloud alpha builds submit --pack image=gcr.io/$PROJECT_ID/cloudrun
 -vpc-proxy
 ```
 
