@@ -9,4 +9,4 @@ def landing_page():
 
 @app.route("/ip_addr/<string:ip>")
 def proxy(ip):
-    return requests.get(ip).content
+    return requests.get("http://"+ip).content
