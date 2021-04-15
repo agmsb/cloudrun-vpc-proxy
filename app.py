@@ -1,7 +1,6 @@
 from flask import Flask
 import requests
 import os
-from json.decoder import JSONDecodeError
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
