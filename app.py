@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request as flask_request
 import requests
 import os
 
@@ -16,7 +16,8 @@ def landing_page():
 @app.route("/ip_addr/<path:path>")
 def proxy(path):
 
-    r = requests.get("http://"+path)
+    # using quick hack to include same headers in downstream request
+    r = requests.get("http://"+path, headers=flask_request.headers)
 
     if r.ok:
 
